@@ -1,4 +1,4 @@
-Code for CPE782  - Independent Component Analysis (Master at COPPE/UFRJ)
+### Code for CPE782  - Independent Component Analysis (Master at COPPE/UFRJ)
 
 The discipline is divided in three parts:
 
