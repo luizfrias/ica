@@ -175,9 +175,9 @@ def jadeR(X):
 	# Reshaping of the data, hoping to speed up things a little bit...
 	X = X.T #transpose data to (256, 3)
 	# Dim. of the space of real symm matrices
-	dimsymm = (m * (m + 1)) / 2 #6
+	dimsymm = int( (m * (m + 1)) / 2 ) #6
 	# number of cumulant matrices
-	nbcm = dimsymm #6
+	nbcm = dimsymm; #6
 	# Storage for cumulant matrices
 	CM = matrix(zeros([m, m*nbcm], dtype = float64))
 	R = matrix(eye(m, dtype=float64)) #[[ 1.  0.  0.] [ 0.  1.  0.] [ 0.  0.  1.]]
@@ -216,7 +216,7 @@ def jadeR(X):
 
 	Diag = zeros(m, dtype=float64) #[0. 0. 0.]
 	On = 0.0
-	Range = arange(m) #[0 1 2]
+	Range = arange(m) #[0 1 2] 
 	for im in range(nbcm): #nbcm == 6
 		Diag = diag(CM[:,Range])
 		On = On + (Diag * Diag).sum(axis = 0)
@@ -277,7 +277,7 @@ def jadeR(X):
 					Off = Off - Gain
 		updates = updates + upds #3 6 9 9
     
-	print 'Number of iter: %d' % updates
+	print ('Number of iter: %d' % updates)
 
 
 	# A separating matrix
